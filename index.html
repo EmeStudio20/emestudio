@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eme Studio 20 - Manicura y Uñas en Plasencia</title>
+
+  <meta name="description" content="Eme Studio 20, salón especializado en manicura y pedicura en Plasencia. Uñas semipermanentes, acrílicas, diseños y cuidado profesional de manos y pies. Reserva tu cita online.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("fondo.jpg") center/cover fixed no-repeat;
+      backdrop-filter: blur(4px);
+      color: #333;
+    }
+
+    .logo-top {
+      text-align: center;
+      padding: 25px 0 10px 0;
+    }
+
+    .logo-top img {
+      height: 150px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    header {
+      background: #ffffffcc;
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid #eee;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      padding: 12px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #444;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff3fb8;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* SOBRE MÍ */
+    #sobre-mi {
+      background: #ffffffee;
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: #222;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    /* GALERÍA */
+    #galeria {
+      padding: 3rem 0;
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .galeria-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transition: transform 0.25s ease;
+    }
+
+    .galeria-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* CONTACTO */
+    #contacto {
+      background: #ffffffee;
+      padding: 2rem;
+      border-radius: 20px;
+      margin-top: 2rem;
+    }
+
+    #contacto a {
+      color: #ff3fb8;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    #contacto a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      background: #111;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- H1 para SEO -->
+  <h1 style="display:none;">Eme Studio 20 - Salón de uñas en Plasencia</h1>
+
+  <div class="logo-top">
+    <img src="logo-eme.png" alt="Logo Eme Studio 20">
+  </div>
+
+  <header>
+    <nav>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi" class="container">
+    <h2>Sobre mí</h2>
+    <p>
+      Bienvenida a <strong>Eme Studio 20</strong>, un espacio especializado en manicura y pedicura en Plasencia.
+      Me apasiona el cuidado de las manos y los pies, y cada servicio es un momento de calma, mimo y belleza.
+    </p>
+    <p>
+      Trabajo con detalle para que tus uñas reflejen tu estilo: desde acabados naturales hasta diseños más atrevidos.
+      Utilizo productos de calidad y técnicas actuales para conseguir resultados bonitos, duraderos y respetuosos con tus uñas.
+    </p>
+    <p>
+      En <strong>Eme Studio 20</strong> quiero que te sientas cómoda, cuidada y feliz con tu manicura o pedicura,
+      disfrutando de un ratito solo para ti.
+    </p>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="container">
+    <h2>Galería</h2>
+    <div class="galeria-grid">
+      <img src="galeria1.jpg" alt="galeria1">
+      <img src="galeria2.jpg" alt="galeria2">
+      <img src="galeria3.jpg" alt="galeria3">
+      <img src="galeria4.jpg" alt="galeria4">
+      <img src="galeria5.jpg" alt="galeria5">
+      <img src="galeria6.jpg" alt="galeria6">
+      <img src="galeria7.jpg" alt="galeria7">
+      <img src="galeria8.jpg" alt="galeria8">
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="container">
+    <h2>Contacto</h2>
+
+    <p><strong>Nombre del salón:</strong> Eme Studio 20</p>
+    <p><strong>Dirección:</strong> Calle San Pedro 20, 10600 Plasencia, Cáceres</p>
+    <p><strong>Teléfono:</strong> 672879152</p>
+    <p><strong>Horario:</strong> 10:00–14:00 / 17:00–20:00 — Sábados 10:00–14:00</p>
+
+    <p>
+      <strong>Reserva online:</strong><br>
+      <a href="https://booksy.com/es-es/162093_eme-studio_salon-de-unas_59555_plasencia#ba_s=seo"
+         target="_blank" rel="noopener noreferrer">
+        Reserva tu cita en Booksy con Eme Studio 20
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Eme Studio 20 — Todos los derechos reservados.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
