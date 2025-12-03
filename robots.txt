@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emestudio20.github.io/emestudio/sitemap.xml
