@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eme Studio 20 - Manicura y Uñas en Plasencia</title>
+
+  <!-- SEO DESCRIPTION -->
+  <meta name="description" content="Eme Studio 20, salón especializado en manicura y pedicura en Plasencia. Uñas semipermanentes, acrílicas, diseños personalizados y cuidado profesional. Reserva tu cita online.">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Eme Studio 20 - Salón de uñas en Plasencia" />
+  <meta property="og:description" content="Manicura, pedicura, uñas acrílicas, semipermanente y diseños en Plasencia. Reserva tu cita en Eme Studio 20." />
+  <meta property="og:image" content="https://emestudio20.github.io/emestudio/logo-eme.png" />
+  <meta property="og:url" content="https://emestudio20.github.io/emestudio/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter / WhatsApp preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Eme Studio 20 - Salón de uñas en Plasencia">
+  <meta name="twitter:description" content="Manicura, pedicura, uñas acrílicas, semipermanente y diseños en Plasencia.">
+  <meta name="twitter:image" content="https://emestudio20.github.io/emestudio/logo-eme.png">
+
+  <!-- FUENTE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("fondo.jpg") center/cover no-repeat;
+      color: #333;
+    }
+
+    .logo-top {
+      text-align: center;
+      padding: 25px 0 10px 0;
+    }
+
+    .logo-top img {
+      height: 150px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* HEADER OPACO + SOMBRA (para que no se “vea” el contenido por debajo al hacer scroll) */
+    header {
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid #eee;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #444;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff3fb8;
+    }
+
+    .container {
+      width: 75%;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    /* Tarjetas */
+    #sobre-mi,
+    #servicios,
+    #cuidado-unas,
+    #contacto {
+      background: #ffffffd6;
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: #222;
+    }
+
+    h3 {
+      margin-top: 1.6rem;
+      color: #333;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    /* ===== SERVICIOS (integrado del servicios.html) ===== */
+    .servicios-subtitulo {
+      text-align: center;
+      color: #666;
+      margin-bottom: 1.6rem;
+      font-size: 0.95rem;
+    }
+
+    .servicio-item {
+      margin-bottom: 1.4rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #f2cde3;
+    }
+
+    .servicio-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .servicio-item h3 {
+      font-size: 1.1rem;
+      margin: 0 0 0.35rem 0;
+      color: #ff3fb8;
+    }
+
+    .servicio-item p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* ===== GALERÍA (CARRUSEL) ===== */
+    #galeria {
+      padding: 2.5rem 0 3rem 0;
+    }
+
+    /* Más estrecho y centrado */
+    .carousel-wrap {
+      width: 86%;
+      max-width: 780px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .carousel {
+      background: #ffffffd6;
+      border-radius: 20px;
+      padding: 1.2rem;
+    }
+
+    .carousel-stage {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      background: #fff;
+    }
+
+    /* Más alto + imagen completa */
+    .carousel-stage img {
+      width: 100%;
+      height: min(82vh, 760px);
+      object-fit: contain;
+      display: block;
+      background: #fff;
+    }
+
+    /* Flechas SIEMPRE visibles */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.18);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      color: #333;
+      z-index: 5;
+    }
+
+    .carousel-btn:hover { background: #fff; }
+    .carousel-btn.prev { left: 14px; }
+    .carousel-btn.next { right: 14px; }
+
+    .carousel-meta {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 0.9rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.25);
+      cursor: pointer;
+      border: none;
+    }
+
+    .dot.active { background: #ff3fb8; }
+
+    .counter {
+      font-size: 0.95rem;
+      color: #444;
+      margin-left: 0.4rem;
+    }
+
+    /* CONTACTO */
+    #contacto a {
+      color: #ff3fb8;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    #contacto a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      background: #111;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    /* Móvil */
+    @media (max-width: 768px) {
+      .container { width: 92%; }
+      .carousel-wrap { width: 92%; max-width: 520px; }
+      .carousel-stage img { height: min(70vh, 640px); }
+      .carousel-btn { width: 42px; height: 42px; }
+      #sobre-mi, #servicios, #cuidado-unas, #contacto { padding: 1.6rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- H1 oculto para SEO -->
+  <h1 style="display:none;">Eme Studio 20 - Salón de uñas en Plasencia</h1>
+
+  <div class="logo-top">
+    <img src="logo-eme.png" alt="Logo Eme Studio 20">
+  </div>
+
+  <header>
+    <nav>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#cuidado-unas">Consejos</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi" class="container">
+    <h2>Sobre mí</h2>
+    <p>
+      Bienvenida a <strong>Eme Studio 20</strong>, un espacio especializado en manicura y pedicura en Plasencia.
+      Me apasiona el cuidado de las manos y los pies, y cada servicio es un momento de calma, mimo y belleza.
+    </p>
+    <p>
+      Trabajo con detalle para que tus uñas reflejen tu estilo: desde acabados naturales hasta diseños más atrevidos.
+      Utilizo productos de calidad y técnicas actuales para conseguir resultados bonitos, duraderos y respetuosos con tus uñas.
+    </p>
+    <p>
+      En <strong>Eme Studio 20</strong> quiero que te sientas cómoda, cuidada y feliz con tu manicura o pedicura,
+      disfrutando de un ratito solo para ti.
+    </p>
+  </section>
+
+  <!-- SERVICIOS (AHORA EN EL MISMO INDEX) -->
+  <section id="servicios" class="container">
+    <h2>Servicios</h2>
+    <div class="servicios-subtitulo">
+      Manicura, semipermanente, acrílico, pedicura y diseños personalizados.
+    </div>
+
+    <div class="servicio-item">
+      <h3>Uñas semipermanentes</h3>
+      <p>
+        Manicura completa con preparación de la uña natural, limpieza de cutícula
+        y esmaltado semipermanente de larga duración. Perfecta para llevar las uñas
+        bonitas durante semanas sin preocuparte.
+      </p>
+    </div>
+
+    <div class="servicio-item">
+      <h3>Uñas acrílicas</h3>
+      <p>
+        Extensiones acrílicas resistentes y elegantes para alargar la uña,
+        corregir forma o crear diseños más elaborados. Acabado natural, estilizado
+        y adaptado a tu estilo.
+      </p>
+    </div>
+
+    <div class="servicio-item">
+      <h3>Pedicura completa y semipermanente</h3>
+      <p>
+        Cuidado profesional de pies con remojo en sales de baño, limado, tratamiento
+        de durezas sin productos agresivos, trabajo de cutículas y esmaltado.
+        También disponible con esmaltado semipermanente para pies bonitos y cuidados
+        durante más tiempo.
+      </p>
+    </div>
+
+    <div class="servicio-item">
+      <h3>Nail art y diseños personalizados</h3>
+      <p>
+        Francesas, baby boomer, degradados, detalles minimalistas, efectos especiales
+        y decoraciones únicas. Diseños adaptados totalmente a tu gusto y ocasión.
+      </p>
+    </div>
+
+    <div class="servicio-item">
+      <h3>Manicura combinada</h3>
+      <p>
+        Técnica que combina herramientas tradicionales y de torno para dejar
+        la cutícula limpia y las uñas perfectamente preparadas antes del esmaltado.
+        Ideal si buscas un acabado muy pulido y elegante.
+      </p>
+    </div>
+
+    <div class="servicio-item">
+      <h3>Mantenimiento y cambios de diseño</h3>
+      <p>
+        Retirada cuidada del producto anterior, reparación de uñas, corrección
+        de forma y nuevo diseño completo para que tus manos y pies estén siempre
+        impecables.
+      </p>
+    </div>
+
+    <div class="servicio-item">
+      <h3>Uñas para eventos y novias</h3>
+      <p>
+        Diseños elegantes y especiales para bodas, fiestas, sesiones de fotos
+        y ocasiones importantes. Uñas pensadas para que te sientas única
+        en tu día especial.
+      </p>
+    </div>
+  </section>
+
+  <!-- CUIDADO DE UÑAS -->
+  <section id="cuidado-unas" class="container">
+    <h2>Cuidado de uñas</h2>
+    <p>
+      Cada uña tiene su propia estructura y necesita un cuidado diferente. Aquí te explico los tipos de uñas más habituales
+      y cómo cuidarlas para mantenerlas bonitas, fuertes y saludables.
+    </p>
+
+    <h3>Uñas débiles, blandas o quebradizas</h3>
+    <ul>
+      <li>Limar suavemente en una sola dirección (evitar el <strong>cortauñas</strong>).</li>
+      <li>Usar bases fortalecedoras con queratina, calcio o biotina.</li>
+      <li>Evitar contacto prolongado con agua y usar guantes en tareas domésticas.</li>
+      <li>Aplicar aceite nutritivo a diario.</li>
+    </ul>
+
+    <h3>Uñas fuertes o duras</h3>
+    <ul>
+      <li>Remojar antes de cortar para ablandarlas.</li>
+      <li>Usar herramientas bien afiladas.</li>
+      <li>Limar bordes para equilibrar la forma.</li>
+      <li>Hidratar cutículas regularmente.</li>
+    </ul>
+
+    <h3>Uñas gruesas</h3>
+    <ul>
+      <li>Limar con grano medio para reducir el grosor.</li>
+      <li>Mantener la uña limpia y seca.</li>
+      <li>No arrancar zonas endurecidas.</li>
+      <li>En uñas del pie, cortar recto para evitar que se encarnen.</li>
+    </ul>
+
+    <h3>Uñas estriadas</h3>
+    <ul>
+      <li>No pulir en exceso para no afinarlas demasiado.</li>
+      <li>Usar base niveladora para unificar la superficie.</li>
+      <li>Hidratar uña y cutícula regularmente.</li>
+      <li>Evitar esmaltes muy densos si la uña está debilitada.</li>
+    </ul>
+
+    <h3>Uñas cortas</h3>
+    <ul>
+      <li>Elegir forma ovalada o cuadrada-suave.</li>
+      <li>Limar con frecuencia.</li>
+      <li>Dejar pequeño margen lateral al esmaltar para estilizar.</li>
+    </ul>
+
+    <h3>Uñas largas</h3>
+    <ul>
+      <li>Limar regularmente para mantener la estructura.</li>
+      <li>Evitar hacer palanca con las uñas.</li>
+      <li>Hidratar a diario.</li>
+      <li>Sellar puntas al esmaltar.</li>
+    </ul>
+
+    <h3>Uñas con extensiones</h3>
+    <ul>
+      <li>Realizar rellenos cada 2–3 semanas.</li>
+      <li>Retirar siempre de forma profesional.</li>
+      <li>Hidratar cutículas para evitar levantamientos.</li>
+      <li>No usar las uñas como herramienta.</li>
+    </ul>
+
+    <h3>Consejos generales para cualquier tipo de uña</h3>
+    <ul>
+      <li><strong>Base siempre:</strong> protege la placa ungueal y prolonga el esmaltado.</li>
+      <li><strong>Higiene suave:</strong> empujar cutículas en vez de cortarlas, salvo necesidad.</li>
+      <li><strong>Removedores gentiles:</strong> alternar con productos sin acetona para evitar resecar.</li>
+      <li><strong>Descanso cuando sea necesario:</strong> si notas la uña seca, flexible o fatigada por esmaltes continuados, espaciar servicios y permitir que la placa ungueal recupere su hidratación y equilibrio natural antes de volver a esmaltar.</li>
+      <li><strong>Alimentación equilibrada:</strong> proteínas, zinc y biotina favorecen un crecimiento saludable.</li>
+    </ul>
+  </section>
+
+  <!-- GALERÍA (CARRUSEL) -->
+  <section id="galeria">
+    <h2>Galería</h2>
+
+    <div class="carousel-wrap">
+      <div class="carousel">
+        <div class="carousel-stage" id="carouselStage">
+          <button class="carousel-btn prev" id="prevBtn" aria-label="Foto anterior">‹</button>
+          <img id="carouselImg" src="galeria1.jpg" alt="Galería Eme Studio 20" loading="eager" decoding="async">
+          <button class="carousel-btn next" id="nextBtn" aria-label="Foto siguiente">›</button>
+        </div>
+
+        <div class="carousel-meta" id="carouselMeta">
+          <span class="counter" id="counter">1 / 9</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="container">
+    <h2>Contacto</h2>
+
+    <p><strong>Nombre del salón:</strong> Eme Studio 20</p>
+    <p><strong>Dirección:</strong> Calle San Pedro 20, 10600 Plasencia, Cáceres</p>
+    <p><strong>Teléfono:</strong> 672879152</p>
+    <p><strong>Horario:</strong> 10:00–14:00 / 17:00–20:00 — Sábados 10:00–14:00</p>
+
+    <p>
+      <strong>Reserva online:</strong><br>
+      <a href="https://booksy.com/es-es/162093_eme-studio_salon-de-unas_59555_plasencia#ba_s=seo"
+         target="_blank" rel="noopener noreferrer">
+        Reserva tu cita en Booksy
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Eme Studio 20 — Todos los derechos reservados.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const images = [
+      "galeria1.jpg","galeria2.jpg","galeria3.jpg","galeria4.jpg","galeria5.jpg",
+      "galeria6.jpg","galeria7.jpg","galeria8.jpg","galeria9.jpg"
+    ];
+
+    let current = 0;
+
+    const imgEl = document.getElementById("carouselImg");
+    const counterEl = document.getElementById("counter");
+    const metaEl = document.getElementById("carouselMeta");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const stage = document.getElementById("carouselStage");
+
+    function preload(idx) {
+      const i = new Image();
+      i.src = images[idx];
+    }
+
+    function renderDots() {
+      const existingDots = metaEl.querySelectorAll(".dot");
+      existingDots.forEach(d => d.remove());
+
+      for (let i = 0; i < images.length; i++) {
+        const b = document.createElement("button");
+        b.className = "dot" + (i === current ? " active" : "");
+        b.type = "button";
+        b.setAttribute("aria-label", `Ir a foto ${i + 1}`);
+        b.addEventListener("click", () => goTo(i));
+        metaEl.insertBefore(b, counterEl);
+      }
+    }
+
+    function updateUI() {
+      imgEl.src = images[current];
+      counterEl.textContent = `${current + 1} / ${images.length}`;
+      renderDots();
+      preload((current + 1) % images.length);
+      preload((current - 1 + images.length) % images.length);
+    }
+
+    function goTo(i) {
+      current = (i + images.length) % images.length;
+      updateUI();
+    }
+
+    prevBtn.addEventListener("click", () => goTo(current - 1));
+    nextBtn.addEventListener("click", () => goTo(current + 1));
+
+    // Swipe móvil
+    let startX = 0;
+    stage.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    stage.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const dx = endX - startX;
+      if (Math.abs(dx) > 40) {
+        if (dx > 0) goTo(current - 1);
+        else goTo(current + 1);
+      }
+    }, { passive: true });
+
+    // Teclas PC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") goTo(current - 1);
+      if (e.key === "ArrowRight") goTo(current + 1);
+    });
+
+    updateUI();
+  </script>
+</body>
+</html>
