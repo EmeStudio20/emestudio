@@ -23,12 +23,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+    /* Rendimiento: quitamos fixed + backdrop-filter del body */
     body {
       font-family: "Poppins", sans-serif;
       margin: 0;
       padding: 0;
-      background: url("fondo.jpg") center/cover fixed no-repeat;
-      backdrop-filter: blur(4px);
+      background: url("fondo.jpg") center/cover no-repeat; /* antes: fixed */
       color: #333;
     }
 
@@ -46,7 +46,6 @@
 
     header {
       background: #ffffffcc;
-      backdrop-filter: blur(6px);
       position: sticky;
       top: 0;
       z-index: 20;
@@ -58,6 +57,7 @@
       justify-content: center;
       gap: 1.2rem;
       padding: 12px 0;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -80,11 +80,10 @@
     #sobre-mi,
     #cuidado-unas,
     #contacto {
-      background: #ffffffdd;
+      background: #ffffffd6; /* un pelín más transparente para ver el fondo */
       border-radius: 20px;
       padding: 2rem;
       margin-top: 2rem;
-      backdrop-filter: blur(2px);
     }
 
     h2 {
@@ -107,34 +106,96 @@
 
     ul li {
       margin-bottom: 8px;
+      line-height: 1.5;
     }
 
+    /* ===== GALERÍA (CARRUSEL) ===== */
     #galeria {
-      padding: 3rem 0;
+      padding: 2.5rem 0 3rem 0;
     }
 
-    .galeria-grid {
+    .carousel-wrap {
       width: 90%;
       max-width: 1100px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 1rem;
+      position: relative;
     }
 
-    .galeria-grid img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
+    .carousel {
+      background: #ffffffd6;
+      border-radius: 20px;
+      padding: 1.2rem;
+    }
+
+    .carousel-stage {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      transition: transform 0.25s ease;
     }
 
-    .galeria-grid img:hover {
-      transform: scale(1.05);
+    .carousel-stage img {
+      width: 100%;
+      height: min(72vh, 620px);
+      object-fit: cover;
+      display: block;
     }
 
+    /* Flechas SIEMPRE visibles */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.18);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      color: #333;
+      z-index: 5;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(255,255,255,1);
+    }
+
+    .carousel-btn.prev { left: 14px; }
+    .carousel-btn.next { right: 14px; }
+
+    .carousel-meta {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 0.9rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.25);
+      cursor: pointer;
+      border: none;
+    }
+
+    .dot.active {
+      background: #ff3fb8;
+    }
+
+    .counter {
+      font-size: 0.95rem;
+      color: #444;
+      margin-left: 0.4rem;
+    }
+
+    /* CONTACTO */
     #contacto a {
       color: #ff3fb8;
       font-weight: 600;
@@ -153,11 +214,17 @@
       color: #ccc;
       font-size: 0.9rem;
     }
+
+    /* Ajuste móvil */
+    @media (max-width: 768px) {
+      .container { width: 92%; }
+      .carousel-stage img { height: min(58vh, 520px); }
+      .carousel-btn { width: 42px; height: 42px; }
+    }
   </style>
 </head>
 
 <body>
-
   <h1 style="display:none;">Eme Studio 20 - Salón de uñas en Plasencia</h1>
 
   <div class="logo-top">
@@ -254,30 +321,33 @@
       <li>No usar las uñas como herramienta.</li>
     </ul>
 
-    <!-- CONSEJOS GENERALES -->
     <h3>Consejos generales para cualquier tipo de uña</h3>
     <ul>
       <li><strong>Base siempre:</strong> protege la placa ungueal y prolonga el esmaltado.</li>
       <li><strong>Higiene suave:</strong> empujar cutículas en vez de cortarlas, salvo necesidad.</li>
       <li><strong>Removedores gentiles:</strong> alternar con productos sin acetona para evitar resecar.</li>
-      <li><strong>Descanso cuando sea necesario:</strong> si notas la uña seca, flexible o fatigada por esmaltes continuados, espaciar servicios para que la uña recupere hidratación y equilibrio natural.</li>
+      <li><strong>Descanso cuando sea necesario:</strong> si notas la uña seca, flexible o fatigada por esmaltes continuados, espaciar servicios y permitir que la placa ungueal recupere su hidratación y equilibrio natural antes de volver a esmaltar.</li>
       <li><strong>Alimentación equilibrada:</strong> proteínas, zinc y biotina favorecen un crecimiento saludable.</li>
     </ul>
   </section>
 
-  <!-- GALERÍA -->
+  <!-- GALERÍA (CARRUSEL) -->
   <section id="galeria">
     <h2>Galería</h2>
-    <div class="galeria-grid">
-      <img src="galeria1.jpg" alt="galeria1">
-      <img src="galeria2.jpg" alt="galeria2">
-      <img src="galeria3.jpg" alt="galeria3">
-      <img src="galeria4.jpg" alt="galeria4">
-      <img src="galeria5.jpg" alt="galeria5">
-      <img src="galeria6.jpg" alt="galeria6">
-      <img src="galeria7.jpg" alt="galeria7">
-      <img src="galeria8.jpg" alt="galeria8">
-      <img src="galeria9.jpg" alt="galeria9">
+
+    <div class="carousel-wrap">
+      <div class="carousel">
+        <div class="carousel-stage" id="carouselStage">
+          <button class="carousel-btn prev" id="prevBtn" aria-label="Foto anterior">‹</button>
+          <img id="carouselImg" src="galeria1.jpg" alt="Galería Eme Studio 20" loading="eager" decoding="async">
+          <button class="carousel-btn next" id="nextBtn" aria-label="Foto siguiente">›</button>
+        </div>
+
+        <div class="carousel-meta" id="carouselMeta">
+          <!-- Dots se generan por JS -->
+          <span class="counter" id="counter">1 / 9</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -292,7 +362,7 @@
 
     <p>
       <strong>Reserva online:</strong><br>
-      <a href="https://booksy.com/es-es/162093_eme-studio_salon-de-unas_59555_plasencia#ba_s=seo" target="_blank">
+      <a href="https://booksy.com/es-es/162093_eme-studio_salon-de-unas_59555_plasencia#ba_s=seo" target="_blank" rel="noopener noreferrer">
         Reserva tu cita en Booksy
       </a>
     </p>
@@ -304,7 +374,93 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 
+    // ===== Carrusel =====
+    const images = [
+      "galeria1.jpg",
+      "galeria2.jpg",
+      "galeria3.jpg",
+      "galeria4.jpg",
+      "galeria5.jpg",
+      "galeria6.jpg",
+      "galeria7.jpg",
+      "galeria8.jpg",
+      "galeria9.jpg"
+    ];
+
+    let current = 0;
+
+    const imgEl = document.getElementById("carouselImg");
+    const counterEl = document.getElementById("counter");
+    const metaEl = document.getElementById("carouselMeta");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const stage = document.getElementById("carouselStage");
+
+    // Preload suave (solo la siguiente y anterior)
+    function preload(idx) {
+      const i = new Image();
+      i.src = images[idx];
+    }
+
+    function renderDots() {
+      // Limpiar dots anteriores (dejando el contador)
+      const existingDots = metaEl.querySelectorAll(".dot");
+      existingDots.forEach(d => d.remove());
+
+      // Insertar dots antes del contador
+      for (let i = 0; i < images.length; i++) {
+        const b = document.createElement("button");
+        b.className = "dot" + (i === current ? " active" : "");
+        b.type = "button";
+        b.setAttribute("aria-label", `Ir a foto ${i + 1}`);
+        b.addEventListener("click", () => goTo(i));
+        metaEl.insertBefore(b, counterEl);
+      }
+    }
+
+    function updateUI() {
+      imgEl.src = images[current];
+      counterEl.textContent = `${current + 1} / ${images.length}`;
+      renderDots();
+
+      // Preload de vecinas
+      preload((current + 1) % images.length);
+      preload((current - 1 + images.length) % images.length);
+    }
+
+    function goTo(i) {
+      current = (i + images.length) % images.length;
+      updateUI();
+    }
+
+    prevBtn.addEventListener("click", () => goTo(current - 1));
+    nextBtn.addEventListener("click", () => goTo(current + 1));
+
+    // Swipe en móvil
+    let startX = 0;
+    let isDown = false;
+
+    stage.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    stage.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const dx = endX - startX;
+      if (Math.abs(dx) > 40) {
+        if (dx > 0) goTo(current - 1);
+        else goTo(current + 1);
+      }
+    }, { passive: true });
+
+    // Teclas en ordenador
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") goTo(current - 1);
+      if (e.key === "ArrowRight") goTo(current + 1);
+    });
+
+    updateUI();
+  </script>
 </body>
 </html>
