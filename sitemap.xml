@@ -1,53 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://emestudio20.github.io/emestudio/</loc>
-    <lastmod>2025-12-26</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria1.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria2.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria3.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria4.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria5.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria6.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria7.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria8.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria9.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria10.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria11.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria12.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://emestudio20.github.io/emestudio/galeria13.jpg</image:loc>
-    </image:image>
-
   </url>
 </urlset>
